@@ -23,14 +23,14 @@ Advanced Portfolio Management System (APMS) for maintaining security records. Pr
 - Show undo / redo list
 
 ##### Function Command List:
-(1)	Create Security Record (Command - "n") -> ("bo"/"st") -> ('string,string,float'/'string,string,string')
-(2)	Show Security Record (Command - "s") -> ('security code'/ "##")
-(3) Deposit Security (Command - "d") -> ('deposit quantity')
-(4) Withdraw Security (Command - "w") -> ('withdraw quantity')
-(5) Display the Undo/RedoList (Command - "l")
-(6) Undo Last Command in the Undo List (Command - "u")
-(7) Redo the last undo command (Command - "r")
-(8) Exit the system (Command - "q")
+- Create Security Record (Command - "n") -> ("bo"/"st") -> ('string,string,float'/'string,string,string')
+- Show Security Record (Command - "s") -> ('security code'/ "##")
+- Deposit Security (Command - "d") -> ('deposit quantity')
+- Withdraw Security (Command - "w") -> ('withdraw quantity')
+- Display the Undo/RedoList (Command - "l")
+- Undo Last Command in the Undo List (Command - "u")
+- Redo the last undo command (Command - "r")
+- Exit the system (Command - "q")
 
 ## Installation
 ### Setup
