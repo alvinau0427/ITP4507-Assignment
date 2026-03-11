@@ -1,49 +1,52 @@
 # ITP4507-Assignment
-> IVE 2015/16 Contemporary Topics in Software Engineering (ITP4507) Assignment
+> **IVE 2015/16 Contemporary Topics in Software Engineering (ITP4507) Assignment**
+>
+> A robust command-line Java application designed for sophisticated security record management, leveraging multiple GoF (Gang of Four) design patterns to ensure scalability and maintainability.
 
-> Java Program: Advanced Portfolio Management System
+[![Java](https://img.shields.io/badge/Java-%23ED8B00.svg?logo=openjdk&logoColor=white)](#) &nbsp;
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) &nbsp;
 
-[![Build Status](https://travis-ci.com/alvinau0427/ITP4507-Assignment.svg?branch=master)](https://travis-ci.org/alvinau0427/ITP4507-Assignment)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+## System Architecture & Design Patterns
+The core strength of APMS lies in its architectural design, ensuring that the system is "Open for extension, closed for modification."
 
-## Getting Started
-Advanced Portfolio Management System (APMS) for maintaining security records. Program contains 8 command options for control the data of security, different function correspond different command key.
+### Applied Patterns:
+* **Command Pattern:** Encapsulates all operations (create, deposit, withdraw, etc.) as objects, enabling a unified interface for execution and the ability to maintain a history for undo/redo.
+* **Factory Pattern:** Decouples the creation logic of `Security` objects (Bonds, Stocks) and `Command` objects, allowing for easy integration of new security types in the future.
+* **Memento Pattern:** Captures and externalizes the state of the security records, providing the foundation for the multi-level **Undo** and **Redo** functionality.
 
-##### The following design patterns are applied in the system:
-- Command pattern: Provide the `create`, `display`, `withdraw`, `undo`, `redo`, and `show undo / redo list` functions.
-- Factory pattern: Create different Command objects and Security objects.
-- Memento pattern: Provide `undo` and `redo` functions.
+## Key Features
+* **Dynamic Security Creation:** Supports Bonds and Stocks with zero initial quantity.
+* **Flexible Inspection:** View detailed metrics (code, name, quantity, yield/exchange) for specific items or all records via `##`.
+* **Transaction Management:** Streamlined deposit and withdrawal workflows.
+* **Advanced State Control:** Full support for tracking, undoing, and redoing commands via an active command list.
 
-## Features
-- Create a security record with zero quantity (Bond or Stock or any new kind of security in the coming future).
-- Show security details (such as code, name, quantity, yield / exchange) by a given code (input code =## to show all records)
-- Deposit / withdarw to / from a security record
-- Undo last command
-- Redo the last undone command
-- Show undo / redo list
+## Command Reference
+| Key | Action | Description |
+| :---: | :--- | :--- |
+| `n` | **New Record** | Create a new Security (`bo` for Bond, `st` for Stock) |
+| `s` | **Show** | Display details of a security code (or `##` for all) |
+| `d` | **Deposit** | Add quantity to an existing record |
+| `w` | **Withdraw** | Subtract quantity from an existing record |
+| `l` | **List** | Display the current Undo and Redo history stacks |
+| `u` | **Undo** | Revert the last executed command |
+| `r` | **Redo** | Re-execute the last undone command |
+| `q` | **Quit** | Terminate the system |
 
-##### Function Command List:
-- Create Security Record (Command - "n") -> ("bo"/"st") -> ('string,string,float'/'string,string,string')
-- Show Security Record (Command - "s") -> ('security code'/ "##")
-- Deposit Security (Command - "d") -> ('deposit quantity')
-- Withdraw Security (Command - "w") -> ('withdraw quantity')
-- Display the Undo/RedoList (Command - "l")
-- Undo Last Command in the Undo List (Command - "u")
-- Redo the last undo command (Command - "r")
-- Exit the system (Command - "q")
+## Installation & Execution
+### Prerequisites
+* JDK 8 or higher installed.
 
-## Installation
-### Setup
+### Build from Source
 ```
-$ cd Portfolio
-$ javac *.java
+cd Portfolio
+javac *.java
 ```
 
 ### Run the program
 ```
 java Main
 ```
-- or execute `run.bat`
+**Note:** Windows users can also simply double-click the `run.bat` file to run the program.
 
 ## Screenshots
 ![Image](https://github.com/alvinau0427/ITP4507-Assignment/blob/master/doc/demo.png)
